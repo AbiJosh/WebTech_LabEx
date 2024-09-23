@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic_JS</title>
+    <script>
+        let timer;
+        function bgChange() {
+            document.body.style.backgroundColor = 'rgb(179, 175, 175)';
+        }
+        function start_timer() {
+            timer = setInterval(function () {
+                const today = new Date();
+                const format_time = today.toLocaleTimeString();
+                document.getElementById("time").value = format_time;
+            }, 1000);
+        }
+    </script>
+    <style>
+        .container {
+            position: relative;
+            display: inline-block; 
+        }
+        .hidden-text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+        }
+        img {
+            transition: transform 0.4s ease;
+        }
+        .container:hover img {
+            transform: translateY(100px);
+        }
+        .container:hover .hidden-text {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body onclick="bgChange()">
+    <a href="../index.html">
+        <img align="right" src="images/home-icon-illustration-image-vector-removebg-preview.png" alt="home" width="30" height="30">
+    </a>
+    <a href="calendar.html">
+        <img align="left" src="images/arrow-back-vector-icon-direction-260nw-1638337234-removebg-preview.png" alt="back" width="25" height="25">
+    </a>
+    <center>
+        <br><br>
+        <h1>Dynamic Page using .js</h1>
+        <div class="container">
+            <input type="text" id="time" placeholder="Click Here" onclick="start_timer()" readonly>
+            <h2 id="change">Complete your tasks</h2>
+            <p id="hover">Hover over here</p>
+            <br>
+            <div class="hidden-text"><b>Start Now!</b></div>
+            <img src="images/All-the-Procrastination-Quotes-to-Get-You-Motivated-1-landscape-39dc3c661435797323f594b7bacad77e-n5mwvo4a7kez.png" alt="Motivation Image">
+        </div>    
+        <script>
+            document.getElementById("hover").addEventListener("mouseenter", function () {
+                document.getElementById("change").textContent = "Don't Procrastinate";
+            });
+            document.getElementById("hover").addEventListener("mouseleave", function () {
+                document.getElementById("change").textContent = "It makes easy things hard, hard things harder";
+            });
+        </script>
+    </center>
+</body>
+</html>
