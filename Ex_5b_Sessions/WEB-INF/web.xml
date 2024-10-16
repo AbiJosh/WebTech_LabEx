@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>HiddenFormSessionServlet</servlet-name>
+        <servlet-class>HiddenFormSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HiddenFormSessionServlet</servlet-name>
+        <url-pattern>/TaskFilterHiddenFields</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>URLRewritingSessionServlet</servlet-name>
+        <servlet-class>URLRewritingSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>URLRewritingSessionServlet</servlet-name>
+        <url-pattern>/TaskFilterURLRewriting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CookiesSessionServlet</servlet-name>
+        <servlet-class>CookiesSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookiesSessionServlet</servlet-name>
+        <url-pattern>/TaskFilterCookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HttpSessionServlet</servlet-name>
+        <servlet-class>HttpSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HttpSessionServlet</servlet-name>
+        <url-pattern>/TaskFilterHttpSession</url-pattern>
+    </servlet-mapping>
+
+</web-app>

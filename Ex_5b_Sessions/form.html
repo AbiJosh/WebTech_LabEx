@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function validate(){
+            if(document.login.username.value == ""){
+                alert("Enter username");
+                document.login.username.focus();
+                return false;
+            }
+            if(document.login.password.value.length < 4){
+                alert("Password length should be greater than 4");
+                document.login.password.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body style="background-color: #B3AFAF;">
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px; background-color: #fff;">
+            <h2 class="text-center mb-4">Login</h2>
+            <form name="login" method="POST" onsubmit="return validate()">
+                <div class="mb-3">
+                    <label for="uname" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" id="uname" placeholder="Enter your username">
+                </div>
+                <div class="mb-3">
+                    <label for="pswd" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="pswd" placeholder="Enter your password">
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <button formaction="TaskFilterHiddenFields" formmethod="POST" class="btn btn-primary">Login with Hidden Form Fields</button>
+                    <button formaction="TaskFilterURLRewriting" formmethod="POST" class="btn btn-primary">Login with URL Rewriting</button>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <button formaction="TaskFilterCookies" formmethod="POST" class="btn btn-primary">Login with Cookies</button>
+                    <button formaction="TaskFilterHttpSession" formmethod="POST" class="btn btn-primary">Login with HttpSession</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
