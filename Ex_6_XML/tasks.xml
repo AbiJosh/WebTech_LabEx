@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tasks>
+    <task>
+        <description>Complete homework</description>
+        <due_date>2024-12-01</due_date>
+    </task>
+    <task>
+        <description>Buy groceries</description>
+        <due_date>2024-11-30</due_date>
+    </task>
+<task><description>Complete lab ex</description><due_date>2024-11-26</due_date></task></tasks>
